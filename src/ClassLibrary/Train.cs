@@ -18,6 +18,33 @@ namespace ClassLibrary
         /// </summary>
         /// <value><c>true</c> si las máquinas fueron encendidas, <c>false</c> en caso contrario.</value>
         public bool IsEngineStarted { get; private set; }
+        /// <summary>
+        /// Contador de Trenes Creados.
+        /// </summary>
+        /// <value></value>
+        public static int count { get; set; } = 0;
+        /// <summary>
+        /// Nombre del identitario del tren.
+        /// </summary>
+        /// <value></value>
+        public string Name { get; private set; }
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="name"></param>
+        public Train(string name)
+        {
+            this.Name = name;
+            count += 1;
+        }
+        /// <summary>
+        /// Destructor de la clase
+        /// </summary>
+        /// <param name="name"></param>
+        ~Train()
+        {
+            count--;
+        }
 
         /// <summary>
         /// Enciende las máquinas del tren.
